@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title>document</title>
+    <style>
+        html {
+          box-sizing: border-box;
+        }
+        *,*:before,*:after{
+          box-sizing: inherit;
+
+        }
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container, row {
+    overflow: auto;
+  
+}
+.container .content {
+          position: absolute;
+          top: 0;
+          
+          background: rgb(0, 0, 0); /* Fallback color */
+          background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+          color: #f1f1f1;
+          width: 30%;
+          padding: 20px;
+        }
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+</style>
+</head>
+<body>
+
+
+  
+<div class="row">
+  <div class="column">
+    <div class="container">
+      <img src="tiger.jpg" alt="Jane" style="width:100%">
+      <div class="content">
+        <h2>tiger</h2>
+        <p class="title">animal</p>
+        <p>A tiger is a large, strong, flesh-eating mammal with orange or light brown fur and black stripes.</p>
+        <p>example tiger</p>
+        <p><button class="button">forest</button></p>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="tiger.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>tiger</h2>
+        <p class="title">animal</p>
+        <p>A tiger is a large, strong, flesh-eating mammal with orange or light brown fur and black stripes.</p>
+        <p>example tiger</p>
+        <p><button class="button">forest</button></p>
+      </div>
+    </div>
+  </div>
+   
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="tiger.jpg" alt="Jane" style="width:100%">
+        <div class="container">
+          <h2>tiger</h2>
+          <p class="title">animal</p>
+          <p>A tiger is a large, strong, flesh-eating mammal with orange or light brown fur and black stripes.</p>
+          <p>example tiger</p>
+          <p><button class="button">forest</button></p>
+        </div>
+      </div>
+    </div>
+    
+  
+
+
+  
+        
+
+</style>
+
+</body>
+</html>

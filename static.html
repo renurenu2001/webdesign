@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    
+        .card {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card1 {
+            float: left;
+            position: absolute;
+            top: 20px;
+            left: 350px;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }    
+        .badge {
+            position: absolute;
+            top: 10px;  /* Move badge 10px up from the top of the card */
+            right: 10px;  /* Move badge 10px right from the right edge of the card */
+            background-color: rgb(82, 22, 222);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
+    
+        }
+
+        .content {
+            position: relative;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .content:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+    <title>Advanced Relative Position Example</title>
+</head>
+<body>
+
+    <div class="card">
+        <div class="badge">lion</div>
+        <div class="content">
+            <img src="lion.jpg" alt="image can't display" width="250px" height="150px">
+            <div class="overlay">Hovered!</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="badge">tiger</div>
+        <div class="content">
+            <img src="tiger.jpg" alt="image can't display" width="250px" height="150px">
+            <div class="overlay">Hovered!</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="badge">elephant</div>
+        <div class="content">
+            <img src="elephant.jpg" alt="image can't display" width="250px" height="150px">
+            <div class="overlay">Hovered!</div>
+        </div>
+    </div>
+    <div class="box">
+    <div class="card1">
+        <div class="badge">elephant</div>
+        <div class="content">
+            <img src="elephant.jpg" alt="image can't display" width="250px" height="150px">
+            <div class="overlay">Hovered!</div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

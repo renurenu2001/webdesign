@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video with Navbar</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        nav {
+            
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+         
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+           
+        }
+
+        .video-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content p {
+            font-size: 1.5em;
+        }
+
+        .additional-content {
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .additional-content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .additional-content p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.services {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.service {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 100%; /* Adjusts the width to be responsive */
+    max-width: 400px; /* Ensures the service doesn't get too wide */
+    display: flex;
+    gap: 20px;
+    border: 2px inset red;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding in the width */
+   
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-staffing {
+    background-image: url('tiger.jpg');
+}
+
+.bg-software {
+    background-image: url('lion.jpg');
+}
+
+.bg-arrow {
+    background-image: url('tiger.jpg');
+    width: 20px; /* Smaller arrow icon */
+    height: 20px; /* Smaller arrow icon */
+}
+
+.info {
+    flex: 1;
+}
+
+h2 {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+                                                                     
+    .service {
+        flex-direction: column; /* Stacks the elements vertically */
+        align-items: center; /* Centers the items when stacked */
+    }
+    
+    .icon {
+        margin-bottom: 10px; /* Adds space below the icon when stacked */
+    }
+}
+section{
+    background-color: #062135;
+}
+.products-section {
+    padding: 50px 20px;
+}
+
+.products-section h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+}
+
+.product-card img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.stats-section {
+    padding: 30px 20px;
+    background-color: #062135;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+   <nav>
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    <div class="video-section">
+        
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="sample.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+    </div>
+    <div class="services">
+        <div class="service">
+            <div class="icon bg-staffing"></div>
+            <div class="info">
+                <h2>Staffing</h2>
+                <p>Enhancing productivity with skilled staffing and augmentation</p>
+            </div>
+            <div class="icon bg-arrow"></div>
+        </div>
+        <div class="service">
+            <div class="icon bg-software"></div>
+            <div class="info">
+                <h2>Software Development Services</h2>
+                <p>Create scalable and modern digital solutions</p>
+            </div>
+            <div class="icon bg-arrow"></div>
+        </div>
+    </div>
+    <div class="services">
+      <div class="service">
+          <div class="icon bg-staffing"></div>
+          <div class="info">
+              <h2>Staffing</h2>
+              <p>Enhancing productivity with skilled staffing and augmentation</p>
+          </div>
+          <div class="icon bg-arrow"></div>
+      </div>
+      <div class="service">
+          <div class="icon bg-software"></div>
+          <div class="info">
+              <h2>Software Development Services</h2>
+              <p>Create scalable and modern digital solutions</p>
+          </div>
+          <div class="icon bg-arrow"></div>
+      </div>
+  </div>
+  <div class="services">
+    <div class="service">
+        <div class="icon bg-staffing"></div>
+        <div class="info">
+            <h2>Staffing</h2>
+            <p>Enhancing productivity with skilled staffing and augmentation</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+    <div class="service">
+        <div class="icon bg-software"></div>
+        <div class="info">
+            <h2>Software Development Services</h2>
+            <p>Create scalable and modern digital solutions</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+  </div>
+  <div class="services">
+    <div class="service">
+        <div class="icon bg-staffing"></div>
+        <div class="info">
+            <h2>Staffing</h2>
+            <p>Enhancing productivity with skilled staffing and augmentation</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+    <div class="service">
+        <div class="icon bg-software"></div>
+        <div class="info">
+            <h2>Software Development Services</h2>
+            <p>Create scalable and modern digital solutions</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+  </div>
+  <div class="services">
+    <div class="service">
+        <div class="icon bg-staffing"></div>
+        <div class="info">
+            <h2>Staffing</h2>
+            <p>Enhancing productivity with skilled staffing and augmentation</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+    <div class="service">
+        <div class="icon bg-software"></div>
+        <div class="info">
+            <h2>Software Development Services</h2>
+            <p>Create scalable and modern digital solutions</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+  </div>
+  <div class="services">
+    <div class="service">
+        <div class="icon bg-staffing"></div>
+        <div class="info">
+            <h2>Staffing</h2>
+            <p>Enhancing productivity with skilled staffing and augmentation</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+    <div class="service">
+        <div class="icon bg-software"></div>
+        <div class="info">
+            <h2>Software Development Services</h2>
+            <p>Create scalable and modern digital solutions</p>
+        </div>
+        <div class="icon bg-arrow"></div>
+    </div>
+  </div>
+  <section class="products-section">
+      <h2>Our Products</h2>
+      <div class="products-container">
+          <div class="product-card">
+              <img src="basket.png" alt="Zen Basket">
+              <p>An online platform that allows you to sell products to a large audience with customizable features.</p>
+          </div>
+          <div class="product-card">
+              <img src="payroll.png" alt="Zenyo Payroll">
+              <p>An automated payroll application that streamlines monthly salary disbursements for your employees.</p>
+          </div>
+          <div class="product-card">
+              <img src="workforce.png" alt="Zenyo Workforce">
+              <p>HR software that simplifies all HR processes and maximizes productivity by automating routine tasks.</p>
+          </div>
+      </div>
+  </section>
+  
+  </body>
+  </html>
+    
+    
