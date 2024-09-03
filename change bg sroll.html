@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body,html{
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .bg-image {
+  
+           height: 50%; 
+  
+
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover; 
+        }
+        .video-section,video-section1,video-section2,video-section3{
+          position: relative;
+          right: 0;
+          bottom: 0;
+          width: 100%; 
+          height: 800px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+
+        }
+        .video-container,video-container1,video-container2,video-container3{
+            
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            z-index: -1;
+        }
+        
+        .bg-text {
+           background-color: rgb(0,0,0); 
+           background-color: rgba(0,0,0, 0.4); 
+           color: white;
+           font-weight: bold;
+           font-size: 80px;
+           border: 10px solid #f1f1f1;
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           z-index: 2;
+           width: 300px;
+           padding: 20px;
+           text-align: center;
+        }
+        
+
+       
+        
+    </style>
+    <div class="video-section">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="companydiscussvideo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-section1">
+            <div class="video-container1">
+                <video autoplay muted loop>
+                    <source src="companydiscussvideo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-section2">
+                <div class="video-container2">
+                    <video autoplay muted loop>
+                        <source src="companydiscussvideo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-section3">
+                    <div class="video-container3">
+                        <video autoplay muted loop>
+                            <source src="companydiscussvideo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                
+              
+          
+      
+            
+        <div class="bg-text">TEXT</div>
+        
+    
+</body>
+</html>
