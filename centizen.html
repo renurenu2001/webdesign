@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .topnav{
+            position:relative;
+        }
+        .topnav video{
+            filter: brightness(80%);
+            object-fit: cover;
+        }
+        .nav{
+            position: fixed;
+            top:0;
+            z-index: 100;
+        }
+        .nav a{
+            text-decoration: none;
+            color:rgb(255, 255, 255);
+            font-size: 20px;
+            float:left;
+            padding-top: 40px;
+            padding-left:40px;
+            position: relative;
+        }
+        .dropdown-wrapper {
+            position: relative;
+            display: inline-block; 
+        }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 39px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            display: none; 
+            z-index: 200; 
+            max-width: 100%;
+            background-color: rgb(30, 30, 116);
+            border:5px;
+        }
+        .dropdown a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            text-align: left;
+        }
+        .dropdown a:hover {
+            background-color: rgb(244, 238, 236); 
+        }
+        .dropdown-wrapper:hover .dropdown {
+            display: inline-block;
+            
+        }
+        .text{
+            position: absolute;
+            top:45%;
+            left: 7%;
+            padding-left: 220px;
+            padding-right: 220px;
+            font-family: sans-serif;
+        }
+        .text p,p{
+            margin:0;
+        }
+        .nav.scrolled {
+            background-color: rgb(255, 255, 255);
+        }
+        .nav.scrolled a{
+            color:black;
+        }
+        .row{
+            margin-left: 40px;
+        }
+        .row::after{
+            content:"";
+            display: table;
+            clear:both;
+        }
+        .column{
+            width:50%;
+            float:left;
+            text-align: center;
+            justify-content: center;
+        }
+        .column-20{
+            width:20%;
+            float:left;
+
+        }
+        .column-30{
+           width:20%;
+           float:left;
+           justify-content: center;
+           text-align: center;
+           padding-left: 7%;
+           padding-top: 60px;
+           text-decoration: none;
+
+        }
+        .column-50{
+            width:60%;
+            float:left;
+            text-align: center;
+        }
+        .card{
+            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+            width: 95%;
+            height: 150px;
+        }
+        .next span{
+            text-align: center;
+            justify-content: center;
+            padding-left: 40px;
+        }
+        .next p{
+            background-color: rgb(26, 93, 155);
+            border-radius: 50%;
+            font-size: 20px;
+            color:white ;
+            width: 30px;
+            padding: 4px;
+            text-decoration: none !important;
+        }  
+        .next a{
+            text-decoration: none !important;
+        }
+        .hovernav:hover{
+            color:rgb(124, 12, 228);
+        }
+        input{
+            border: 2px solid;
+            border-color: black;
+            text-align: center;
+        }
+        .column button{
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <video src="grupvideo.mp4" type="mp4" width="100%" height="540px" autoplay muted loop></video>
+        <div class="nav">
+            <img src="centizen logo.png" alt="logo" width="15%" style="padding-top: 20px; padding-left: 50px; float:left;">
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Talent Solution</a>
+                <div class="dropdown">
+                    <a href="#">IT staffing</a>
+                    <a href="#">general staffing</a>
+                    <a href="#">IT outsourcing</a>
+                    <a href="#">global remote hiring</a>
+                </div>
+                
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Software Engineering</a>
+                <div class="dropdown">
+                    <a href="#">Software Development</a>
+                    <a href="#">Product Development</a>
+                    <a href="#">DevOps engineering</a>
+                    <a href="#">Digital experience design</a>
+                    <a href="#">Quality engineering</a>
+                    <a href="#">Cloud development service</a>
+                    <a href="#">Tech stack</a>
+                </div>
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Remote hiring</a>
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#">Products</a>
+                <div class="dropdown">
+                    <a href="#">zen basket</a>
+                    <a href="#">zen payroll</a>
+                    <a href="#">zenyo workforce</a>
+                </div>
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Company</a>
+                <div class="dropdown">
+                    <a href="#">About us</a>
+                    <a href="#">Area of expertise</a>
+                    <a href="#">client referal program</a>
+                    <a href="#">case studies</a>
+                    <a href="#">blogs</a>
+                </div>
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Carreers</a>
+                <div class="dropdown">
+                    <a href="#">candidate referal program</a>
+                </div>
+            </div>
+            <div class="dropdown-wrapper">
+                <a href="#" class="hovernav">Contacts</a>
+            </div>
+        </div>
+        <div class="text">
+            <p style="font-size: 45px; color:white">We’re a global staffing & software</p>
+            <p style="font-size: 45px; color:white">engineering company making</p>
+            <p style="font-size: 45px; color:white">success series for over 19years</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h1 style="color:rgb(26, 93, 155); ;">Talent Solution</h1>
+            <div class="card">
+                <div class="column-20">
+                    <img src="staff.png" alt="i1" style="padding-top: 30px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Staffing</h3>
+                    <p style="text-align: left; font-size: 20px;">enchance productivity with skilled staffing and augumentation</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <h1 style="color: rgb(26, 93, 155);;">Software Engineering</h1>
+            <div class="card">
+                <div class="column-20">
+                    <img src="Software.png" alt="i2" style="padding-top: 20px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Software development services</h3>
+                    <p style="text-align: left; font-size: 20px;">Create scalable and modern digital solutions</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Global.png" alt="i3" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Global remote hiring</h3>
+                    <p style="text-align: left; font-size: 20px;">enchance productivity with skilled staffing and augumentation</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="product.png" alt="i4" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">product development services</h3>
+                    <p style="text-align: left; font-size: 20px;">transform ideas into powerful digital products</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Dedicated.png" alt="i5" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">dedicated developers</h3>
+                    <p style="text-align: left; font-size: 20px;">enchance productivity with skilled staffing and augumentation</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Cloud.png" alt="i6" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">cloud native development</h3>
+                    <p style="text-align: left; font-size: 20px;">transform ideas into powerful digital products</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="IT.png" alt="i7" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">IT outsourcing</h3>
+                    <p style="text-align: left; font-size: 20px;">enchance productivity with skilled staffing and augumentation</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Digital.png" alt="i8" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">digital experience design</h3>
+                    <p style="text-align: left; font-size: 20px;">transform ideas into powerful digital products</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Team.png" alt="i9" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Team Extension</h3>
+                    <p style="text-align: left; font-size: 20px;">enchance productivity with skilled staffing and augumentation</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="DevOps.png" alt="i10" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">dev ops engineering</h3>
+                    <p style="text-align: left; font-size: 20px;">transform ideas into powerful digital products</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>1
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Scalable.png" alt="i11" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Scalable Agile Teams</h3>
+                    <p style="text-align: left; font-size: 20px;">Flexible team for dynamic process demand on demand </p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="column-20">
+                    <img src="Quality.png" alt="i12" style="padding-top: 40px;">
+                </div>
+                <div class="column-50">
+                    <h3 style="text-align:left;">Quality Engineering </h3>
+                    <p style="text-align: left; font-size: 20px;">improve software quality through testing and engineering</p>
+                </div>
+                <div class="column-30">
+                    <a href="#" class="next" style="text-decoration: none;"><p>&#8250;</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="products" style="background-color: rgb(70, 117, 219); padding-left: 55px;">
+        <h1 style="text-align: center; color: white; font-family: sans-serif;padding-top:30px;">Our Products</h1>
+        <div class="row">
+            <div class="prcolumn" style=" background-color: white; width:28%; border-radius: 10px; float:left;margin-left:20px; height:270px;">
+                <img src="pd1.png" alt="pr1" style="padding-left: 80px;margin-top: 30px;">
+                <p style="text-align: center; font-size: 26px;padding: 10px;font-weight:lighter;">An online platform that allows you to sell products to large audience with customisable features</p>
+            </div>
+            <div class="prcolumn" style=" background-color: white; width:28%; border-radius: 10px; float:left; margin-left: 20px;height: 270px;">
+                <img src="pd2.png" alt="pr2" style="padding-left: 80px;margin-top: 30px;">
+                <p style="text-align: center; font-size: 26px;padding: 10px;font-weight:lighter;">An automated payroll application that streamlines disbursements monthly salary for your employees</p>
+            </div>
+            <div class="prcolumn" style=" background-color: white; width:28%; border-radius: 10px; float: left; margin-left:20px; height:270px;">
+                <img src="pd3.png" alt="pr3" style="padding-left: 80px;margin-top: 40px;">
+                <p style="text-align: center; font-size: 26px;padding: 10px;font-weight:lighter;">HR software that simplifies all HR processes and maximize productivity by automating routine tasks</p>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <hr style="margin: 0;">
+    <div>
+        <img src="xolo3.png" alt="xolo" style="float:left" width="750px" height="400px">
+        <div class="blue" style="background-color: rgba(13, 42, 102, 0.952); float:left;height:400px;width:705px;">
+            <div class="row">
+                <div class="column" style="margin: 20px; width: 40%; margin-top: 40px;">
+                    <h1 style="color: #ccc;"> 19+</h1>
+                    <p style="color: #ccc;">years of experience</p><br>
+                    <hr>
+                </div>
+                <div class="column" style="margin:20px;margin-left: 45px; width:40%; margin-top: 40px;">
+                    <h1 style="color: #ccc;"> 800+</h1>
+                    <p style="color: #ccc;">successfull projects</p><br>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" style="margin: 20px; width: 40%;">
+                    <h1 style="color: #ccc;"> 1000+</h1>
+                    <p style="color: #ccc;">developers places across usa</p>
+                    
+                </div>
+                <div class="column" style="margin:20px;margin-left: 45px; width:40%; padding-left: 0px;">
+                    <h1 style="color: #ccc;"> 100%</h1>
+                    <p style="color: #ccc;">fuelled by passion</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" style="width:40%;margin-top: 30px; text-align: left; padding-left: 30px; margin-top:80px;">
+            <h1 style="color:rgb(49, 63, 185)">CONTACTS</h1>
+            <p style="font-size: 20px;"><strong>United states:</strong>+(971) 53678394099</p><br>
+            <p style="font-size: 20px;"><strong>India:</strong>+91 98646474477</p><br>
+            <p style="font-size: 20px;"><strong>Canada:</strong>+91 98646474477</p><br>
+            <p style="font-size: 20px;"><strong>Email:</strong>contact@mysite.com</p><br>
+        </div>
+        <div class="column" style="width:60%; margin-top: 40px;margin-top: 100px;">
+            <form action="contact">
+                <input type="text" name="name" id="name" placeholder="Name*" required style="height:55px;width:350px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="organization" id="organization" placeholder="Organization*" required style="height:55px;width:350px;">
+                <br><br>
+                <input type="email" name="mail" id="mail" placeholder="email address" required style="height:55px;width:350px;">
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="number" id="number" placeholder="PhoneNumber*" style="height:55px;width:350px;">
+                <br><br>
+                <input type="text" name="details" id="details" placeholder="Additional Details*"style="height:200px;width:720px;">
+            </form>
+            <br><br>
+            <button style="color: #ccc;background-color: orangered;padding: 15px;margin-right: 50%;border-radius: 10px; font-size: 20px;">Send Request</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="footer" style="background-color: black; color: #ccc;float: left;">
+        <div class="para" style="width: 25%; background-color: black;float: left;margin-left: 15px;">
+            <h2 style="text-align: center;">Centizen</h2>
+            <p>A Leading IT Staffing, Custom Software and SaaS Product Development company founded in 2003. We offer a wide range of scalable, innovative IT Staffing and Software Development Solutions.</p>
+            <br>
+            <img src="x1.png" alt="icon" width="40px" height="45px">
+            <img src="x2.png" alt="icon" width="40px" height="50px">
+            <img src="x4.png" alt="icon" width="40px" height="50px">
+            <img src="x5.png" alt="icon" width="40px" height="50px">
+            <img src="x6.png" alt="icon" width="60px" height="50px">
+        </div>
+        <div class="list1" style="width: 15%;float: left;">
+            <h2 style="padding-left: 25px;">Our Services</h2>
+            <ul style="list-style: none;">
+                <li>IT Staffing</li>
+                <li>General Staffing</li>
+                <li>Remote Hiring</li>
+            </ul>
+            <h2 style="padding-left: 25px;">Prodcuts</h2>
+            <ul style="list-style: none;">
+                <li>ZenBasket</li>
+                <li>Zenyo Payroll</li>
+                <li>Zenyo Workforce</li>
+            </ul>
+        </div>
+        <div calss="com" style="width: 15%;float: left;">
+            <h2 style="padding-left: 25px;">Company</h2>
+            <ul style="list-style: none;">
+                <li>About Us</li>
+                <li>Why Us</li>
+                <li>Case Studies</li>
+                <li>Blogs</li>
+                <li>Careers</li>
+                <li>Client Referral</li>
+                <li>Affiliate Program</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="software" style="width: 25%;float: left;">
+            <h2 style="padding-left: 20px;">Software Engineering</h2>
+            <ul style="list-style: none;">
+                <li>Software Development</li>
+                <li>Product Development</li>
+                <li>DevOps Engineering</li>
+                <li>Digital Experience Design</li>
+                <li>Quality Engineering & Testing</li>
+                <li>Cloud Development Services</li>
+                <li>Tech Stack</li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <ul style="list-style: none;">
+                <li>USA: +1 (971) 420-1700</li>
+                <li>Canada: +1 (971) 420-1700</li>
+                <li>India: +91 63807-80156</li>
+                <li>Email: contact@centizen.com</li>
+            </ul>
+            <img src="x8.png" alt="don't display" width="200px">
+        </div>
+    </div>
+</body>
+</html>
