@@ -10,14 +10,16 @@
          var a = parseInt(prompt("Enter a a value :"));
          var b = parseInt(prompt("Enter a b value :"));
          var c = parseInt(prompt("Enter a c value :"));
-         if(a>b>c){
-            document.write("greatest number")
-
+         if((a>b) && (a<c)){
+            document.write("a is greatest num")
          }
-         else{
-            document.write("print greatest number")
-         }
-
+        else if((b>a) && (b>c)){
+           document.write("b is a greatest num")
+        }
+        else if((c>a) && (c<b)){
+          document.write("c is a greatest num")
+        }
+       
     </script>
 </body>
 </html>
