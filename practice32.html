@@ -6,11 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="demo"></p>
     <script>
-         var x = parseInt(prompt("enter a x value:"));
-        var y = (x%2==0) ? "divisible by 2": (x%3==0) ? "divisible by 3":"num";
-        document.write(y)
+        let text = "";
+        let x=10;
+        let y=5;
+        let z=20;
+        let sum=x+y-z;
+        document.getElementById("demo").innerHTML = sum;
 
-    </script>
+        
+     </script>
 </body>
 </html>
