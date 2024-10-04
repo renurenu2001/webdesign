@@ -7,14 +7,22 @@
 </head>
 <body>
     <script>
-        let text = "";
-        let x = 1;
-        while(x<=5){
-            text += "the number is"+ x+"<br>";
-            x+=1;
+        var x = parseInt(prompt("Enter the value "));
+        var temp = x;
+        var sum = 0
+        while(temp>0){
+            var d=temp%10;
+            sum+=Math.pow(d,3);
+            temp=Math.floor(temp/10);
 
         }
-        document.getElementById("demo").innerHTML = text;
+        if(sum==x){
+            document.write("it is amstrong number")
+        }
+        else{
+            document.write("it is not amstrong number")
+        }
     </script>
+    
 </body>
 </html>
