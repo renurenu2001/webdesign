@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ATM {
+    constructor() {
+        this.balance = 1000; 
+        this.pin = "1234"; 
+    }
+
+    
+    checkBalance() {
+        return `Your current balance is $${this.balance}`;
+    }
+
+    
+    deposit(amount) {
+        if (amount <= 0) {
+            return "Deposit amount must be greater than zero.";
+        }
+        this.balance += amount;
+        return `You have deposited $${amount}. ${this.checkBalance()}`;
+    }
+
+    
+    withdraw(amount) {
+        if (amount <= 0) {
+            return "Withdrawal amount must be greater than zero.";
+        }
+        if (amount > this.balance) {
+            return "Insufficient funds!";
+        }
+        this.balance -= amount;
+        return `You have withdrawn $${amount}. ${this.checkBalance()}`;
+    }
+
+    
+    changePin(newPin) {
+        if (newPin.length !== 4) {
+            return "PIN must be 4 digits.";
+        }
+        this.pin = newPin;
+        return "PIN changed successfully.";
+    }
+
+    
+    authenticate(inputPin) {
+        return inputPin === this.pin;
+    }
+}
+
+
+const atm = new ATM();
+let isAuthenticated = false;
+
+
+function atmOperations() {
+    const inputPin = prompt("Enter your 4-digit PIN:");
+    
+    if (atm.authenticate(inputPin)) {
+        isAuthenticated = true;
+        alert("Authenticated successfully!");
+
+        while (isAuthenticated) {
+            const action = prompt(
+                "Choose an action:\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Change PIN\n5. Exit"
+            );
+
+            switch (action) {
+                case "1":
+                    alert(atm.checkBalance());
+                    break;
+                case "2":
+                    const depositAmount = parseFloat(prompt("Enter amount to deposit:"));
+                    alert(atm.deposit(depositAmount));
+                    break;
+                case "3":
+                    const withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
+                    alert(atm.withdraw(withdrawAmount));
+                    break;
+                case "4":
+                    const newPin = prompt("Enter your new 4-digit PIN:");
+                    alert(atm.changePin(newPin));
+                    break;
+                case "5":
+                    alert("Thank you for using the ATM!");
+                    isAuthenticated = false;
+                    break;
+                default:
+                    alert("Invalid action. Please try again.");
+                    break;
+            }
+        }
+    } else {
+        alert("Invalid PIN. Please try again.");
+    }
+}
+
+
+atmOperations();
+
+    </script>
+</body>
+</html>

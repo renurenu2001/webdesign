@@ -8,10 +8,10 @@
 <body>
     <script>
         var TC = parseInt(prompt("enter a TC value:"));
-        var IC = parseInt(prompt("enter a AC value:"));
+        var AC = parseInt(prompt("enter a AC value:"));
         
         var ap = AC/TC*100
-        var exam = (ap>75) ? "student sit in exam": (IC<80) ? "student  not sit in exam": "exam";
+        var exam = (TC>75) ? "student sit in exam": (TC<80) ? "student  not sit in exam": "exam";
 
         
         
