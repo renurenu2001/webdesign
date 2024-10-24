@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addNumber()">click me</button>
+    <button onclick="subNumber()">click me</button>
+    <button onclick="multipleNumber()">click me</button>
+    <button onclick="divisionNumber()">click me</button>
+    <script>
+        function addNumber()
+        {
+        var x = parseInt(prompt("enter a x value"));
+        var y = parseInt(prompt("enter a y value"));
+        var z = x+y
+        document.write(z)
+        }
+        function subNumber()
+        {
+        var x = parseInt(prompt("enter a x value"));
+        var y = parseInt(prompt("enter a y value"));
+        var z = x-y
+        document.write(z)    
+        }
+        function multipleNumber()
+        {
+        var x = parseInt(prompt("enter a x value"));
+        var y = parseInt(prompt("enter a y value"));
+        var z = x*y
+        document.write(z)    
+        }
+        function divisionNumber()
+        {
+        var x = parseInt(prompt("enter a x value"));
+        var y = parseInt(prompt("enter a y value"));
+        var z = x/y
+        document.write(z)    
+        }
+
+    </script>
+</body>
+</html>
