@@ -7,11 +7,33 @@
 </head>
 <body>
     <h1 onclick="addNumber(2,3)">click me</h1>
+    <h1 onclick="subNumber(2,3)">click me</h1>
+    <h1 onclick="multipleNumber(2,3)">click me</h1>
+    <h1 onclick="divisionNumber(2,3)">click me</h1>
+
     <script>
          function addNumber(a,b)
         {
         
         var z = a+b
+        document.write(z)
+        }
+        function subNumber(a,b)
+        {
+        
+        var z = a-b
+        document.write(z)
+        }
+        function multipleNumber(a,b)
+        {
+        
+        var z = a*b
+        document.write(z)
+        }
+        function divisionNumber(a,b)
+        {
+        
+        var z = a/b
         document.write(z)
         }
 

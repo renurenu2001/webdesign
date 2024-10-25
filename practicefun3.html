@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onclick="amstrongNumber()">click me</p>
+    <script>
+        function amstrongNumber()
+        {
+        var x = parseInt(prompt("Enter the value "));
+        var temp = x;
+        var sum = 0 
+        while(temp>0){
+            var d=temp%10;
+            sum+=Math.pow(d,3);
+            temp=Math.floor(temp/10);
+
+        }
+        if(sum==x){
+            document.write("it is amstrong number")
+        }
+        else{
+            
+            document.write("it is not amstrong number")
+        }
+        }
+    </script>
+    
+</body>
+</html>
